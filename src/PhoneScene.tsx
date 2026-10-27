@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { WELCOME, CAPACITY, VENUE, DINING, photo } from './content'
+import { WELCOME, CAPACITY, VENUE, DINING, photo, link } from './content'
 import { MoreLink, Rise } from './ui'
 
 /*
@@ -57,8 +57,8 @@ export default function PhoneScene() {
         </Rise>
         <Rise delay={0.55}>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 28 }}>
-            <a href="/enquire/" className="btn btn-solid label">Enquire now</a>
-            <a href="/gallery/" className="btn btn-ghost label">View gallery</a>
+            <a href={link('/enquire/')} className="btn btn-solid label">Enquire now</a>
+            <a href={link('/gallery/')} className="btn btn-ghost label">View gallery</a>
           </div>
         </Rise>
         <Rise delay={0.65}>
@@ -112,7 +112,7 @@ export default function PhoneScene() {
         </div>
         <Rise delay={0.2}>
           <div style={{ marginTop: 28 }}>
-            <MoreLink href="/venue/">Explore the venue</MoreLink>
+            <MoreLink href={link('/venue/')}>Explore the venue</MoreLink>
           </div>
         </Rise>
       </Chapter>
@@ -140,7 +140,7 @@ export default function PhoneScene() {
         </Rise>
         <Rise delay={0.25}>
           <div style={{ marginTop: 28 }}>
-            <MoreLink href="/dining/">See how we dine</MoreLink>
+            <MoreLink href={link('/dining/')}>See how we dine</MoreLink>
           </div>
         </Rise>
       </Chapter>

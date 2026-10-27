@@ -4,7 +4,7 @@ import Stage from '../Stage'
 import PhoneScene from '../PhoneScene'
 import PhotoGrid from '../Gallery'
 import { Eyebrow, MoreLink, Rise, Section } from '../ui'
-import { GALLERY } from '../content'
+import { GALLERY, link } from '../content'
 
 /*
   Home — the scroll-choreographed scene, then a glimpse of the gallery.
@@ -40,7 +40,7 @@ function Home() {
             </h2>
           </Rise>
           <Rise delay={0.1}>
-            <MoreLink href="/gallery/">View the full gallery</MoreLink>
+            <MoreLink href={link('/gallery/')}>View the full gallery</MoreLink>
           </Rise>
         </div>
         <PhotoGrid items={GALLERY.slice(0, 6)} />

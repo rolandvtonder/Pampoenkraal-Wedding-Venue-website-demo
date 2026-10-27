@@ -1,6 +1,6 @@
 import { mount } from '../Layout'
 import { Eyebrow, MoreLink, PageHero, Rise, Section } from '../ui'
-import { DINING, DINING_PAGE, SIZE, photo } from '../content'
+import { DINING, DINING_PAGE, SIZE, photo, link } from '../content'
 
 /*
   Dining — how a meal at Pampoenkraal is served, course by course, and the
@@ -72,7 +72,7 @@ function Dining() {
               {DINING_PAGE.quote}
             </blockquote>
             <div style={{ marginTop: 40, display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap' }}>
-              <MoreLink href="/enquire/">Plan your menu with us</MoreLink>
+              <MoreLink href={link('/enquire/')}>Plan your menu with us</MoreLink>
             </div>
           </figure>
         </Rise>

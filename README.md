@@ -1,5 +1,7 @@
 # Pampoenkraal Wedding Venue — website demo
 
+**Live demo:** https://rolandvtonder.github.io/Pampoenkraal-Wedding-Venue-website-demo/
+
 A new website for Pampoenkraal, the wedding and function venue on the Altydgedacht Wine Estate in Durbanville.
 
 ## Pages
@@ -33,9 +35,11 @@ npm run build
 
 Upload the contents of `dist/` to any static host. Each page is its own `index.html`, so no server rewrites are needed.
 
+Every push to `main` also rebuilds and republishes the GitHub Pages demo (`.github/workflows/deploy.yml`). To host under a sub-path yourself, set `BASE_PATH` when building, e.g. `BASE_PATH=/demo/ npm run build`.
+
 ## Enquiry form
 
-The form sends enquiries through [Web3Forms](https://web3forms.com). Create a free access key for info@pampoenkraal.co.za, copy `.env.example` to `.env`, and paste the key in. Without a key, the form opens the visitor's email app with the enquiry written out.
+The form sends enquiries through [Web3Forms](https://web3forms.com). Create a free access key for info@pampoenkraal.co.za, copy `.env.example` to `.env`, and paste the key in. For the GitHub Pages demo, add the same key as a repository secret named `VITE_WEB3FORMS_KEY`. Without a key, the form opens the visitor's email app with the enquiry written out.
 
 ## Built with
 

@@ -1,6 +1,6 @@
 import { mount } from '../Layout'
 import { Eyebrow, MoreLink, PageHero, Rise, Section } from '../ui'
-import { CAPACITY, CONTACT, VENUE_PAGE, photo } from '../content'
+import { CAPACITY, CONTACT, VENUE_PAGE, photo, link } from '../content'
 
 /*
   The venue — the lapa and its numbers, the spaces, and the story of the
@@ -128,7 +128,7 @@ function Venue() {
             </address>
             <div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <a href={CONTACT.map} target="_blank" rel="noopener noreferrer" className="btn btn-ghost label">Open in Google Maps</a>
-              <MoreLink href="/enquire/">Book a viewing</MoreLink>
+              <MoreLink href={link('/enquire/')}>Book a viewing</MoreLink>
             </div>
           </Rise>
         </div>

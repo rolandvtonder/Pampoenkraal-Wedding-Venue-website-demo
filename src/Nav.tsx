@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { CONTACT } from './content'
+import { CONTACT, link } from './content'
 
 /*
   The navbar sits outside the scaled stage, fixed to the window at natural
@@ -19,7 +19,7 @@ const LINKS: { t: string; to: Exclude<Page, 'home'> }[] = [
   { t: 'Enquire', to: 'enquire' },
 ]
 
-export const href = (p: Page) => (p === 'home' ? '/' : `/${p}/`)
+export const href = (p: Page) => link(p === 'home' ? '/' : `/${p}/`)
 
 export function Logo({ size = 34 }: { size?: number }) {
   return (
@@ -106,7 +106,7 @@ export default function Nav({ current }: { current: Page }) {
           pointerEvents: 'auto',
         }}
       >
-        <a href="/" className="link" aria-label="Pampoenkraal home" aria-current={current === 'home' ? 'page' : undefined}>
+        <a href={link('/')} className="link" aria-label="Pampoenkraal home" aria-current={current === 'home' ? 'page' : undefined}>
           <Logo />
         </a>
         <div className="nav-links" style={{ flex: 1, display: 'flex', justifyContent: 'center', gap: 44 }}>
@@ -122,7 +122,7 @@ export default function Nav({ current }: { current: Page }) {
             </a>
           ))}
         </div>
-        <a href="/enquire/" className="btn btn-ghost label nav-cta" style={{ marginLeft: 'auto', minHeight: 44, padding: '0 20px' }}>
+        <a href={link('/enquire/')} className="btn btn-ghost label nav-cta" style={{ marginLeft: 'auto', minHeight: 44, padding: '0 20px' }}>
           Book a viewing
         </a>
         <button

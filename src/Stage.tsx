@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import { animate, useScroll, useMotionValueEvent } from 'motion/react'
 import { SCROLL_VH, P, I, G, INTRO_MS, STOPS, span, ramp, ease, lerp } from './scroll'
-import { WELCOME, CAPACITY, VENUE, DINING, photo } from './content'
+import { WELCOME, CAPACITY, VENUE, DINING, photo, link } from './content'
 import { MoreLink } from './ui'
 
 /*
@@ -307,10 +307,10 @@ export default function Stage() {
                 pointerEvents: 'auto',
               }}
             >
-              <a href="/enquire/" className="btn btn-solid label">
+              <a href={link('/enquire/')} className="btn btn-solid label">
                 Enquire now
               </a>
-              <a href="/gallery/" className="btn btn-ghost label" style={{ paddingRight: px(8) }}>
+              <a href={link('/gallery/')} className="btn btn-ghost label" style={{ paddingRight: px(8) }}>
                 View gallery
                 <span
                   aria-hidden="true"
@@ -491,7 +491,7 @@ export default function Stage() {
               {VENUE.teaser}
             </p>
             <div style={{ position: 'absolute', left: 0, top: px(560), width: px(GROUP_W), display: 'flex', justifyContent: 'center' }}>
-              <MoreLink href="/venue/">Explore the venue</MoreLink>
+              <MoreLink href={link('/venue/')}>Explore the venue</MoreLink>
             </div>
           </section>
 
@@ -527,7 +527,7 @@ export default function Stage() {
               {DINING.body}
             </p>
             <div style={{ position: 'absolute', left: 0, top: px(588) }}>
-              <MoreLink href="/dining/">See how we dine</MoreLink>
+              <MoreLink href={link('/dining/')}>See how we dine</MoreLink>
             </div>
             <ul
               style={{

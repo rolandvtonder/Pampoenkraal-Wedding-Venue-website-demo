@@ -100,7 +100,12 @@ export const SIZE: Record<string, [number, number]> = {
   'fire-oven': [959, 430],
 }
 
-export const photo = (name: string) => `/photos/${name}.jpg`
+/* Every internal URL goes through the build's base path, so the site works
+   both at a domain root and under a sub-path such as GitHub Pages'
+   /Pampoenkraal-Wedding-Venue-website-demo/. */
+export const link = (path: string) => import.meta.env.BASE_URL + path.replace(/^\//, '')
+
+export const photo = (name: string) => link(`photos/${name}.jpg`)
 
 /* ---- page copy: the venue ---- */
 export const VENUE_PAGE = {

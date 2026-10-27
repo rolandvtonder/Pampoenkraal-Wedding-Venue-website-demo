@@ -1,4 +1,4 @@
-import { CONTACT } from './content'
+import { CONTACT, link } from './content'
 import { Logo } from './Nav'
 
 /*
@@ -12,10 +12,10 @@ const COLUMNS: { head: string; links: { t: string; href: string; ext?: boolean }
   {
     head: 'Explore',
     links: [
-      { t: 'The venue', href: '/venue/' },
-      { t: 'Dining', href: '/dining/' },
-      { t: 'Gallery', href: '/gallery/' },
-      { t: 'Enquire', href: '/enquire/' },
+      { t: 'The venue', href: link('/venue/') },
+      { t: 'Dining', href: link('/dining/') },
+      { t: 'Gallery', href: link('/gallery/') },
+      { t: 'Enquire', href: link('/enquire/') },
     ],
   },
   {
@@ -75,7 +75,7 @@ export default function Footer() {
             </p>
           </div>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <a href="/enquire/" className="btn btn-leaf label">Book a viewing</a>
+            <a href={link('/enquire/')} className="btn btn-leaf label">Book a viewing</a>
             <a href={CONTACT.phoneHref} className="btn btn-ghost label">Call {CONTACT.phone}</a>
           </div>
         </div>
